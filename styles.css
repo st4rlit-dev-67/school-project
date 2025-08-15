@@ -1,0 +1,252 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: radial-gradient(black 30%, #222);
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  background: purple;
+  padding: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+  margin-right: 10px;
+  user-select: none;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  min-height: 0; /* fix flex container height issues */
+  overflow: hidden;
+}
+
+.about-box {
+  width: 250px;
+  background: violet;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10px auto;
+}
+
+.person-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hide-btn {
+  background-color: #662266;
+  color: white;
+  border: none;
+  padding: 8px;
+  margin: 10px auto 0 auto;
+  border-radius: 5px;
+  cursor: default;
+  width: 100%;
+  white-space: normal;
+  text-align: left;
+  user-select: text;
+}
+
+.post-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.post-box {
+  background: mediumorchid;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.post-box.posted {
+  margin-top: 0;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+  padding: 10px;
+  font-style: italic;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+#postTitle {
+  cursor: text;
+  outline: none;
+  display: inline-block;
+  user-select: text;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#postTitle:focus {
+  border-bottom: 1px solid black;
+}
+
+.icon.guide {
+  font-size: 28px;
+  margin-left: 10px;
+}
+
+.guide-box {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 220px;
+  background: violet;
+  padding: 15px;
+  border-radius: 10px;
+  color: black;
+  display: none;
+  text-align: left;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.guide-box .guide-icon {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Full about overlay */
+.full-about-overlay {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(100, 0, 150, 0.95);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-about-content {
+  background: violet;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #5a005a;
+  text-align: center;
+  color: black;
+}
+
+.full-about-content h1 {
+  margin-top: 0;
+}
+
+.full-about-content .person-icon {
+  margin: 20px auto;
+  width: 140px;
+  height: 140px;
+}
+
+.full-about-content button {
+  background-color: #662266;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.full-about-content.bounce-in {
+  animation: bounceIn 0.6s ease;
+}
+
+#postBtn {
+  background-color: #662266;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#postBtn:hover {
+  background-color: #551155;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.delete-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #aa2266;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.delete-btn:hover {
+  background-color: #881a52;
+}
