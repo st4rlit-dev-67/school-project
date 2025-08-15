@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="icon home" id="toggleFullAbout">🏠</div>
+    <div class="icon person" id="toggleAbout">&#128100;</div>
+    <div class="icon guide" id="toggleGuide">&#128196;</div> <!-- 📃 icon -->
+  </div>
+
+  <!-- full about overlay -->
+  <div id="fullAboutOverlay" class="full-about-overlay" style="display:none;">
+    <div class="full-about-content">
+      <h1>ABOUT</h1>
+      <div class="person-icon">
+        <img src="https://ik.imagekit.io/qczrnyrth/hi_A4w2MsYAj?updatedAt=1755057249246.png" alt="Person" />
+      </div>
+      <p>
+        HAII IM CHARLOTTE!<br />
+        thank you for visiting this HORRIBLE site.<br />
+        byeee!
+      </p>
+      <button id="closeFullAbout">Close</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- about box -->
+    <div class="about-box" id="aboutBox" style="display:none;">
+      <h2>ABOUT <span class="info-icon">ℹ️</span></h2>
+      <div class="person-icon">
+        <img src="https://ik.imagekit.io/qczrnyrth/hi_A4w2MsYAj?updatedAt=1755057249246.png" alt="Person" />
+      </div>
+      <button class="hide-btn" disabled>
+        name: charlotte<br />
+        user: st4rlit!<br />
+        pronouns: she/her<br />
+        likes: chicken burgers, milkshakes, gaming<br />
+        DNI: pedophiles, "im just a girl💜!" people
+      </button>
+    </div>
+
+    <!-- guide box -->
+    <div class="guide-box" id="guideBox" style="display:none;">
+      <div class="guide-icon">📃</div>
+      <h2>Posting<br />help</h2>
+      <p>
+        &lt;br&gt; - Enter<br />
+        &lt;b&gt; - Bold text<br />
+        &lt;strong&gt; - Important text<br />
+        &lt;i&gt; - Italic text<br />
+        &lt;em&gt; - Emphasized text<br />
+        &lt;mark&gt; - Marked text<br />
+        &lt;small&gt; - Smaller text<br />
+        &lt;del&gt; - Deleted text<br />
+        &lt;ins&gt; - Inserted text<br />
+        &lt;sub&gt; - Subscript text<br />
+        &lt;sup&gt; - Superscript text
+      </p>
+    </div>
+
+    <!-- post section -->
+    <div class="post-section">
+      <div class="post-box">
+  <h2 id="postTitle" contenteditable="true" spellcheck="false">blog post</h2>
+  <textarea placeholder="ENTER TEXT HERE TO POST"></textarea>
+  <input type="file" id="imageInput" accept="image/*">
+  <button id="postBtn">Post</button>
+</div>
+      <div id="posts"></div>
+    </div>
+  </div>
+</body>
+</html>
